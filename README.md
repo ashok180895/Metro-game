@@ -25,19 +25,10 @@ There are four conditions that must be followed when laying down tiles:
 * A tile may not be placed so that it connects two stations (or loops back to the same station) with a track of length 1, unless there is no other valid way to place this tile (this rarely occurs). 
 
 The game ends when all tiles have been placed.
-The winner is decided by scoring completed tracks - see [Scoring](#scoring).
+The winner is decided by scoring completed tracks 
 
-The image below shows invalid placements that may occur.
-The tile in the top-left corner is invalid because it completes a track from station 9 with a length of 1.
-The tile in the top-right corner is invalid because it loops from station 6 back to itself, when there are other options available for placement.
-The tile in the bottom-centre is invalid because it does not connect to any other tile or the edge of the board.
 
-![Example of invalid placement](assets/invalid_placements.png)
 
-The following image demonstrates *valid* loops from a station back to itself.
-Note the invalid loops traverse only one tile, while the valid loops traverse more than one tile.
-
-![Example of valid loops](assets/valid_lines.png)
 
 ### Board
 
@@ -76,16 +67,13 @@ are as follows:
 There are also four stations located in the centre of the board at coordinates `(3,3), (3,4), (4,3), (4,4)`.
 These belong to no player, but double the score of any line that ends at them.
 
-The image below shows the layout of the board, including the label of each square.
-![Board positions](assets/board_positions.png)
-
 
 ### Tiles
 
 Tiles have 8 exits, starting with 0 in the top-left corner and continuing clockwise as shown below.
 Each even-numbered exit connects to an odd-numbered exit.
 
-![Example tile showing number of each exit, starting with 0 in the top-left and continuing clockwise](assets/numbered_exits.png)
+
 
 Every tile is represented by a four-character string. 
 Each character is a letter between 'a' and 'd', denoting the **orientation of the
@@ -97,9 +85,6 @@ More specifically,
 * 'c' denotes a track that turns 90º to the neighbouring edge counter-clockwise; and,
 * 'd' denotes a track that turns 180º i.e. loops back to the same edge.
 
-The image below shows the tile 'cbaa', which has a track from exit 0 that turns counter-clockwise to join exit 7, a track from exit 2 that turns to clockwise to join exit 5, a straight track from exit 4 to exit 1, and a straight track from exit 6 to exit 3.
-
-![Example tile cbaa showing labels of even-numbered exits, starting with c at exit 0 and continuing clockwise](assets/tile_label.png)
 
 There are 60 tiles in total, with 2-4 copies of each tile as follows: 
 * **4 copies** of tiles `aacb`, `cbaa`, `acba`, `baac`, and `aaaa`;
@@ -124,7 +109,4 @@ A player scores 1 point *for each tile the metro line crosses.* If a metro line 
 scores 1 point for *every time that line crosses the tile.* If a line ends at one of the central stations,
 the points for that line are doubled. 
 
-For example: In the image below, the yellow player scores 19 points on station 11.
-(Remember tracks can finish at any station, this one just happens to loop back to itself).
 
-![Example track scoring](assets/scoring_example_1.png)
